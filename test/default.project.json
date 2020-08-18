@@ -1,0 +1,34 @@
+{
+	"name": "flipper-test-runner",
+	"tree": {
+		"$className": "DataModel",
+
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+
+			"Flipper": {
+				"$path": "../default.project.json"
+			},
+
+			"TestEZ": {
+				"$path": "testez"
+			}
+		},
+
+		"StarterPlayer": {
+			"$className": "StarterPlayer",
+
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts",
+
+				"testRunner": {
+					"$path": "runner.client.lua"
+				},
+
+				"demo": {
+					"$path": "demo.client.lua"
+				}
+			}
+		}
+	}
+}
