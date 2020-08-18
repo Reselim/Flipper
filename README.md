@@ -1,6 +1,6 @@
-<center>
+<p align="center">
 	<img src=".github/logo.png" height=150>
-</center>
+</p>
 
 Flipper is an animation library based around Motors and Goals.
 
