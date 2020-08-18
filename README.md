@@ -82,4 +82,4 @@ Check out the [demo script](test/demo.client.lua) in the test project!
 
 # License
 
-Flipper is licensed under [Apache 2.0](LICENSE), however, it [contains some code](src/Spring.lua) with the MIT License.
+Flipper is licensed in full under the [MIT license](LICENSE). Note that it [contains code](src/Spring.lua) from another author, which is also under the MIT license.
