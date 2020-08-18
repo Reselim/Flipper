@@ -2,7 +2,7 @@
 	<img src=".github/logo.png" height=150>
 </p>
 
-Flipper is an animation library based around Motors and Goals.
+Flipper is an animation library for Roblox based around Motors and Goals.
 
 # Installation
 
