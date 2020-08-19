@@ -22,16 +22,16 @@ local function toMotor(value)
 	error(("Unable to convert %q to motor; type %s is unsupported"):format(value, valueType), 2)
 end
 
-function GroupMotor.new(initialValues, shouldStartImplicitly)
+function GroupMotor.new(initialValues, useImplicitConnections)
 	assert(initialValues, "Missing argument #1: initialValues")
 	assert(typeof(initialValues) == "table", "initialValues must be a table!")
 
 	local self = setmetatable(BaseMotor.new(), GroupMotor)
 
-	if shouldStartImplicitly ~= nil then
-		self._shouldStartImplicitly = shouldStartImplicitly
+	if useImplicitConnections ~= nil then
+		self._useImplicitConnections = useImplicitConnections
 	else
-		self._shouldStartImplicitly = true
+		self._useImplicitConnections = true
 	end
 
 	self._complete = true
@@ -62,6 +62,10 @@ function GroupMotor:step(deltaTime)
 	self._onStep:fire(self:getValue())
 
 	if allMotorsComplete then
+		if self._useImplicitConnections then
+			self:stop()
+		end
+
 		self._complete = true
 		self._onComplete:fire()
 	end
@@ -77,7 +81,7 @@ function GroupMotor:setGoal(goals)
 		motor:setGoal(goal)
 	end
 
-	if self._shouldStartImplicitly then
+	if self._useImplicitConnections then
 		self:start()
 	end
 end
