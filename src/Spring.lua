@@ -36,7 +36,6 @@ function Spring:step(state, dt)
 	if d == 1 then -- Critically damped
 		p1 = (offset*(1 + f*dt) + v0*dt)*decay + g
 		v1 = (v0*(1 - f*dt) - offset*(f*f*dt))*decay
-
 	elseif d < 1 then -- Underdamped
 		local c = math.sqrt(1 - d*d)
 
