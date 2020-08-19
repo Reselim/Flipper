@@ -23,11 +23,11 @@ function BaseMotor:onComplete(handler)
 end
 
 function BaseMotor:start()
-	self:stop() -- Stop any existing connections, if they exist
-
-	self._connection = RunService.RenderStepped:Connect(function(deltaTime)
-		self:step(deltaTime)
-	end)
+	if not self._connection then
+		self._connection = RunService.RenderStepped:Connect(function(deltaTime)
+			self:step(deltaTime)
+		end)
+	end
 end
 
 function BaseMotor:stop()
