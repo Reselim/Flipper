@@ -14,19 +14,25 @@ local function toMotor(value)
 	local valueType = typeof(value)
 
 	if valueType == "number" then
-		return SingleMotor.new(value)
+		return SingleMotor.new(value, false)
 	elseif valueType == "table" then
-		return GroupMotor.new(value)
+		return GroupMotor.new(value, false)
 	end
 
 	error(("Unable to convert %q to motor; type %s is unsupported"):format(value, valueType), 2)
 end
 
-function GroupMotor.new(initialValues)
+function GroupMotor.new(initialValues, shouldStartImplicitly)
 	assert(initialValues, "Missing argument #1: initialValues")
 	assert(typeof(initialValues) == "table", "initialValues must be a table!")
 
 	local self = setmetatable(BaseMotor.new(), GroupMotor)
+
+	if shouldStartImplicitly ~= nil then
+		self._shouldStartImplicitly = shouldStartImplicitly
+	else
+		self._shouldStartImplicitly = true
+	end
 
 	self._complete = true
 	self._motors = {}
@@ -69,6 +75,10 @@ function GroupMotor:setGoal(goals)
 	for key, goal in pairs(goals) do
 		local motor = assert(self._motors[key], ("Unknown motor for key %s"):format(key))
 		motor:setGoal(goal)
+	end
+
+	if self._shouldStartImplicitly then
+		self:start()
 	end
 end
 

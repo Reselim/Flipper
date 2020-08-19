@@ -29,8 +29,6 @@ local motor = Flipper.GroupMotor.new({
 	Y = 0
 })
 
-motor:start()
-
 motor:onStep(function(values)
 	frame.Position = UDim2.new(0, values.X, 0, values.Y)
 end)

@@ -3,11 +3,17 @@ local BaseMotor = require(script.Parent.BaseMotor)
 local SingleMotor = setmetatable({}, BaseMotor)
 SingleMotor.__index = SingleMotor
 
-function SingleMotor.new(initialValue)
+function SingleMotor.new(initialValue, shouldStartImplicitly)
 	assert(initialValue, "Missing argument #1: initialValue")
 	assert(typeof(initialValue) == "number", "initialValue must be a number!")
 
 	local self = setmetatable(BaseMotor.new(), SingleMotor)
+
+	if shouldStartImplicitly ~= nil then
+		self._shouldStartImplicitly = shouldStartImplicitly
+	else
+		self._shouldStartImplicitly = true
+	end
 
 	self._goal = nil
 	self._state = {
@@ -42,6 +48,10 @@ end
 function SingleMotor:setGoal(goal)
 	self._state.complete = false
 	self._goal = goal
+
+	if self._shouldStartImplicitly then
+		self:start()
+	end
 end
 
 function SingleMotor:__tostring()
