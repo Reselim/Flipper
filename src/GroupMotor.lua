@@ -23,6 +23,9 @@ local function toMotor(value)
 end
 
 function GroupMotor.new(initialValues)
+	assert(initialValues, "Missing argument #1: initialValues")
+	assert(typeof(initialValues) == "table", "initialValues must be a table!")
+
 	local self = setmetatable(BaseMotor.new(), GroupMotor)
 
 	self._complete = true
