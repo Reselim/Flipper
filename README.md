@@ -20,6 +20,14 @@ git submodule add https://github.com/Reselim/Flipper packages/Flipper
 
 Copy the `src` folder from this repository into your packages directory.
 
+## npm (for roblox-ts)
+
+Install the [`@rbxts/flipper`](https://www.npmjs.com/package/@rbxts/flipper) package using `npm` or `yarn`.
+
+```
+npm i @rbxts/flipper
+```
+
 ## Without Rojo
 
 TODO
