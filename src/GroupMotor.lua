@@ -58,7 +58,7 @@ function GroupMotor:step(deltaTime)
 			allMotorsComplete = false
 		end
 	end
-	
+
 	self._onStep:fire(self:getValue())
 
 	if allMotorsComplete then
