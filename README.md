@@ -43,10 +43,6 @@ function Example:init()
 	self.motor:start()
 end
 
-function Example:willUnmount()
-	self.motor:destroy()
-end
-
 function Example:render()
 	return Roact.createElement("ImageButton", {
 		Size = self.binding:map(function(value)
