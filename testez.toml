@@ -1,0 +1,45 @@
+[selene]
+base = "roblox"
+name = "testez"
+
+[[describe.args]]
+required = true
+type = "string"
+
+[[describe.args]]
+required = true
+type = "function"
+
+[[it.args]]
+required = true
+type = "string"
+
+[[it.args]]
+required = true
+type = "function"
+
+[[itFOCUS.args]]
+required = true
+type = "string"
+
+[[itFOCUS.args]]
+required = true
+type = "function"
+
+[[itSKIP.args]]
+required = true
+type = "string"
+
+[[itSKIP.args]]
+required = true
+type = "function"
+
+[FOCUS]
+args = []
+
+[SKIP]
+args = []
+
+[[expect.args]]
+required = true
+type = "any"
