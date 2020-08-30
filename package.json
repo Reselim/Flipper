@@ -4,6 +4,7 @@
 	"description": "An animation library for Roblox",
 	"main": "src/init.lua",
 	"types": "typings/index.d.ts",
+	"files": [ "src", "typings" ],
 	"license": "MIT",
 	"author": "Reselim",
 	"homepage": "https://github.com/Reselim/Flipper",
