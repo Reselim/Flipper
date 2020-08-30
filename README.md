@@ -48,7 +48,6 @@ function Example:init()
 	self.binding = binding
 
 	self.motor:onStep(setBinding)
-	self.motor:start()
 end
 
 function Example:render()
