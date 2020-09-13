@@ -1,14 +1,7 @@
-import Instant from "./Instant";
-import Spring from "./Spring";
+import { Spring, Instant } from ".";
 import BaseMotor from "./BaseMotor"
 
-export default class SingleMotor extends BaseMotor<number> {
-	/**
-	 * Creates a new SingleMotor
-	 * @param initialValue Value to set the motor to initially
-	 * @param useImplicitConnections Should this motor manage RenderStepped connections automatically?
-	 */
-	constructor(initialValue: number, useImplicitConnections?: boolean)
+declare interface SingleMotor extends BaseMotor<number> {
 
 	/**
 	 * TODO
@@ -22,3 +15,15 @@ export default class SingleMotor extends BaseMotor<number> {
 	 */
 	setGoal(goal: Spring | Instant): void;
 }
+
+declare interface SingleMotorConstructor {
+	/**
+	 * Creates a new SingleMotor
+	 * @param initialValue Value to set the motor to initially
+	 * @param useImplicitConnections Should this motor manage RenderStepped connections automatically?
+	 */
+	new(initialValue: number, useImplicitConnections?: boolean): SingleMotor;
+}
+
+declare const SingleMotor: SingleMotorConstructor;
+export = SingleMotor;
