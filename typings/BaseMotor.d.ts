@@ -1,6 +1,6 @@
 import { Connection } from "./Signal"
 
-export default class BaseMotor {
+export default class BaseMotor<T> {
 	/**
 	 * Creates a new BaseMotor
 	 */
@@ -10,7 +10,7 @@ export default class BaseMotor {
 	 * Connects a function to be called whenever the motor updates
 	 * @param handler
 	 */
-	onStep(handler: (value: unknown) => void): Connection
+	onStep(handler: (value: T) => void): Connection
 	
 	/**
 	 * Connects a function to be called whenever the motor completes
