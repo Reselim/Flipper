@@ -6,7 +6,7 @@ export default class SingleMotor extends BaseMotor {
 	 * @param initialValue Value to set the motor to initially
 	 * @param useImplicitConnections Should this motor manage RenderStepped connections automatically?
 	 */
-	constructor(initialValue: number, useImplicitConnections?: number)
+	constructor(initialValue: number, useImplicitConnections?: boolean)
 
 	/**
 	 * TODO
