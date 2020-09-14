@@ -1,12 +1,12 @@
 interface SpringState {
-	complete: boolean,
-	position: number,
+	complete: boolean
+	position: number
 	velocity: number
 }
 
 interface SpringOptions {
-	frequency?: number;
-	dapingRatio?: number;
+	frequency?: number
+	dapingRatio?: number
 }
 
 declare interface Spring {
@@ -14,8 +14,8 @@ declare interface Spring {
 }
 
 declare interface SpringConstructor {
-	new(targetValue: number, options?: SpringOptions): Spring;
+	new(targetValue: number, options?: SpringOptions): Spring
 }
 
-declare const Spring: SpringConstructor;
-export = Spring;
+declare const Spring: SpringConstructor
+export = Spring

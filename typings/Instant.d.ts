@@ -4,12 +4,12 @@ interface InstantState {
 }
 
 declare interface Instant {
-	step(state: InstantState, deltaTime: number): InstantState;
+	step(state: InstantState, deltaTime: number): InstantState
 }
 
 declare interface InstantConstructor {
-	new(targetValue: number): Instant;
+	new(targetValue: number): Instant
 }
 
-declare const Instant: InstantConstructor;
-export = Instant;
+declare const Instant: InstantConstructor
+export = Instant
