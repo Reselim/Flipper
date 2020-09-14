@@ -10,7 +10,7 @@ type GroupMotorGoals<T> = T extends Array<number> ?
 	: never
 
 declare interface GroupMotor<T> extends BaseMotor<T> {
-		/**
+	/**
 	 * TODO
 	 */
 	getValue(): T
