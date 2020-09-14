@@ -1,5 +1,7 @@
-import { Spring, Instant } from "."
 import BaseMotor from "./BaseMotor"
+
+import Spring from "./Spring"
+import Instant from "./Instant"
 
 declare interface SingleMotor extends BaseMotor<number> {
 
