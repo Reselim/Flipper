@@ -3,12 +3,13 @@ interface InstantState {
 	complete: boolean
 }
 
-export default class Instant {
-	/**
-	 * Creates a new Instant goal
-	 * @param targetValue
-	 */
-	constructor(targetValue: number)
-
-	step(state: InstantState, deltaTime: number): InstantState
+declare interface Instant {
+	step(state: InstantState, deltaTime: number): InstantState;
 }
+
+declare interface InstantConstructor {
+	new(targetValue: number): Instant;
+}
+
+declare const Instant: InstantConstructor;
+export = Instant;

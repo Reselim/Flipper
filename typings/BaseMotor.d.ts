@@ -1,16 +1,11 @@
 import { Connection } from "./Signal"
 
-export default class BaseMotor {
-	/**
-	 * Creates a new BaseMotor
-	 */
-	constructor()
-
+declare interface BaseMotor<T> {
 	/**
 	 * Connects a function to be called whenever the motor updates
 	 * @param handler
 	 */
-	onStep(handler: (value: unknown) => void): Connection
+	onStep(handler: (value: T) => void): Connection
 	
 	/**
 	 * Connects a function to be called whenever the motor completes
@@ -41,3 +36,5 @@ export default class BaseMotor {
 	 */
 	step(deltaTime: number): boolean
 }
+
+export = BaseMotor;

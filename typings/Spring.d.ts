@@ -4,16 +4,18 @@ interface SpringState {
 	velocity: number
 }
 
-export default class Spring {
-	/**
-	 * Creates a new Spring goal
-	 * @param targetValue
-	 * @param options 
-	 */
-	constructor(targetValue: number, options?: {
-		frequency?: number,
-		dampingRatio?: number
-	})
-	
+interface SpringOptions {
+	frequency?: number;
+	dapingRatio?: number;
+}
+
+declare interface Spring {
 	step(state: SpringState, deltaTime: number): SpringState
 }
+
+declare interface SpringConstructor {
+	new(targetValue: number, options?: SpringOptions): Spring;
+}
+
+declare const Spring: SpringConstructor;
+export = Spring;
