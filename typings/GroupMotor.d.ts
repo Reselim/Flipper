@@ -24,6 +24,11 @@ declare interface GroupMotor<T> extends BaseMotor<T> {
 }
 
 declare interface GroupMotorConstructor {
+	/**
+	 * Creates a new SingleMotor
+	 * @param initialValue Value to set the motor to initially
+	 * @param useImplicitConnections Should this motor manage RenderStepped connections automatically?
+	 */
 	new<T extends Array<number> | {[name: string]: number}>(initialValues: T, useImplicitConnections?: boolean): GroupMotor<T>
 }
 
