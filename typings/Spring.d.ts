@@ -6,7 +6,7 @@ interface SpringState {
 
 interface SpringOptions {
 	frequency?: number
-	dapingRatio?: number
+	dampingRatio?: number
 }
 
 declare interface Spring {
