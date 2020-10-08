@@ -19,14 +19,13 @@ function Linear:step(state, dt)
 
 	local dPos = dt * velocity
 
-	local complete = math.abs(goal - position) <= dPos
+	local complete = dPos >= math.abs(goal - position)
 	position = position + dPos * (goal > position and 1 or -1)
-
 	if complete then
 		position = self._targetValue
 		velocity = 0
 	end
-
+	
 	return {
 		complete = complete,
 		value = position,
