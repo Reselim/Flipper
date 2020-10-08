@@ -3,7 +3,7 @@ return function()
 	local Spring = require(script.Parent.Spring)
 
 	describe("completed state", function()
-		local motor = SingleMotor.new(0)
+		local motor = SingleMotor.new(0, false)
 
 		local goal = Spring.new(1, { frequency = 2, dampingRatio = 0.75 })
 		motor:setGoal(goal)
@@ -22,7 +22,7 @@ return function()
 	end)
 
 	it("should inherit velocity", function()
-		local motor = SingleMotor.new(0)
+		local motor = SingleMotor.new(0, false)
 		motor._state = { complete = false, value = 0, velocity = -5 }
 
 		local goal = Spring.new(1, { frequency = 2, dampingRatio = 1 })
