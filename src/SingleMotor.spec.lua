@@ -3,7 +3,7 @@ return function()
 	local Instant = require(script.Parent.Instant)
 
 	it("should assign new state on step", function()
-		local motor = SingleMotor.new(0)
+		local motor = SingleMotor.new(0, false)
 
 		motor:setGoal(Instant.new(5))
 		motor:step(1/60)
@@ -13,7 +13,7 @@ return function()
 	end)
 
 	it("should invoke onComplete listeners when the goal is completed", function()
-		local motor = SingleMotor.new(0)
+		local motor = SingleMotor.new(0, false)
 		
 		local didComplete = false
 		motor:onComplete(function()

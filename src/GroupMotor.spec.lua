@@ -8,7 +8,7 @@ return function()
 		local motor = GroupMotor.new({
 			A = 1,
 			B = 2
-		})
+		}, false)
 
 		expect(motor._complete).to.equal(true)
 
@@ -34,7 +34,7 @@ return function()
 		local motor = GroupMotor.new({
 			A = 1,
 			B = 2
-		})
+		}, false)
 
 		local value = motor:getValue()
 
