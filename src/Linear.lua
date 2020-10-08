@@ -3,7 +3,9 @@ Linear.__index = Linear
 
 function Linear.new(targetValue, options)
     assert(targetValue, "Missing argument #1: targetValue")
-    
+	
+	options = options or {}
+
 	return setmetatable({
         _targetValue = targetValue,
         _targetVelocity = options.velocity or 1
