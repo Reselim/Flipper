@@ -15,8 +15,8 @@ function Linear.new(targetValue, options)
 end
 
 function Linear:step(state, dt)
-    local position = state.value
-	local velocity = self._targetVelocity
+	local position = state.value
+	local velocity = self._targetVelocity -- Linear motion ignores the state's velocity
 	local goal = self._targetValue
 
 	local dPos = dt * velocity
