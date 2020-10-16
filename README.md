@@ -77,7 +77,7 @@ end
 return Example
 ```
 
-Flipper works wonderfully with Roact on its own, but if you plan on using it for a lot of your components, [roact-flipper (TODO)]() will make that *much* easier.
+Flipper works wonderfully with Roact on its own, but if you plan on using it for a lot of your components, [roact-flipper](https://github.com/Reselim/roact-flipper) will make that *much* easier.
 
 ## Without Roact
 
