@@ -1,8 +1,10 @@
 <p align="center">
-	<img src=".github/logo.png" height=150>
+	<img src=".github/logo.svg" height="180">
+	<br>
+	Flipper is an animation library for Roblox based around Motors and Goals.
 </p>
 
-Flipper is an animation library for Roblox based around Motors and Goals.
+
 
 # Installation
 
