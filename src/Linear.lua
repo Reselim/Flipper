@@ -8,13 +8,13 @@ function Linear.new(targetValue, options)
 
 	return setmetatable({
 		_targetValue = targetValue,
-		_targetVelocity = options.velocity or 1
+		_velocity = options.velocity or 1
 	}, Linear)
 end
 
 function Linear:step(state, dt)
 	local position = state.value
-	local velocity = self._targetVelocity -- Linear motion ignores the state's velocity
+	local velocity = self._velocity -- Linear motion ignores the state's velocity
 	local goal = self._targetValue
 
 	local dPos = dt * velocity
