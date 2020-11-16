@@ -96,7 +96,7 @@ function Spring:step(state, dt)
 		v1 = e1*r1 + e2*r2
 	end
 
-	local complete = v1 < VELOCITY_THRESHOLD and math.abs(offset) < POSITION_THRESHOLD
+	local complete = math.abs(v1) < VELOCITY_THRESHOLD and math.abs(p1 - g) < POSITION_THRESHOLD
 	
 	return {
 		complete = complete,
