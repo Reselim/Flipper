@@ -4,8 +4,6 @@
 	Flipper is an animation library for Roblox based around Motors and Goals.
 </p>
 
-
-
 # Installation
 
 ## Rojo
@@ -32,7 +30,7 @@ npm i @rbxts/flipper
 
 ## Without Rojo
 
-TODO
+Download the latest .rbxm file from [the releases page](https://github.com/Reselim/Flipper/releases) and drag it into studio.
 
 # Usage
 
