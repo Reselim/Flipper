@@ -6,8 +6,8 @@
 	"types": "typings/index.d.ts",
 	"files": [
 		"src",
-    "typings",
-    "!src/**/*.spec.lua"
+		"typings",
+		"!src/**/*.spec.lua"
 	],
 	"license": "MIT",
 	"author": "Reselim",
