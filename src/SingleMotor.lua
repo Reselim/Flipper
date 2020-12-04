@@ -1,11 +1,13 @@
+local Serializer = require(script.Parent.Serializer)
 local BaseMotor = require(script.Parent.BaseMotor)
 
 local SingleMotor = setmetatable({}, BaseMotor)
 SingleMotor.__index = SingleMotor
 
 function SingleMotor.new(initialValue, useImplicitConnections)
-	assert(initialValue, "Missing argument #1: initialValue")
-	assert(typeof(initialValue) == "number", "initialValue must be a number!")
+	local valueType = typeof(initialValue)
+	assert(not Serializer.has(valueType), "Use a GroupMotor for data types!")
+	assert(valueType == "number", "initialValue must be a number!")
 
 	local self = setmetatable(BaseMotor.new(), SingleMotor)
 

@@ -1,5 +1,6 @@
-import SingleMotor from "./SingleMotor"
-import GroupMotor from "./GroupMotor"
+import { SingleMotor } from "./SingleMotor"
+import { GroupMotor } from "./GroupMotor"
+import Motor from "./Motor"
 
 import Instant from "./Instant"
 import Linear from "./Linear"
@@ -10,6 +11,7 @@ declare function isMotor(value: any): boolean
 export {
 	SingleMotor,
 	GroupMotor,
+	Motor,
 
 	Instant,
 	Linear,

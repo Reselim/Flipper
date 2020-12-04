@@ -18,5 +18,8 @@
 	},
 	"devDependencies": {
 		"@rbxts/types": "^1.0.390"
+	},
+	"dependencies": {
+		"roblox-ts": "^1.0.0-beta.6"
 	}
 }

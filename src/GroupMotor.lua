@@ -2,9 +2,19 @@ local BaseMotor = require(script.Parent.BaseMotor)
 local SingleMotor = require(script.Parent.SingleMotor)
 
 local isMotor = require(script.Parent.isMotor)
+local Ser = require(script.Parent.Serializer)
 
 local GroupMotor = setmetatable({}, BaseMotor)
 GroupMotor.__index = GroupMotor
+
+local function serializeGoal(goalClass, goal)
+	local data = Ser.serialize(goal._targetValue)
+	for property, value in pairs(data) do
+		data[property] = goalClass.new(value, goal._options)
+	end
+
+	return data
+end
 
 local function toMotor(value)
 	if isMotor(value) then
@@ -16,15 +26,31 @@ local function toMotor(value)
 	if valueType == "number" then
 		return SingleMotor.new(value, false)
 	elseif valueType == "table" then
-		return GroupMotor.new(value, false)
+		return GroupMotor.new(value, false, false)
+	elseif Ser.has(valueType) then
+		return GroupMotor.new(
+			Ser.serialize(value),
+			false,
+			true,
+			valueType
+		)
 	end
 
 	error(("Unable to convert %q to motor; type %s is unsupported"):format(value, valueType), 2)
 end
 
-function GroupMotor.new(initialValues, useImplicitConnections)
-	assert(initialValues, "Missing argument #1: initialValues")
-	assert(typeof(initialValues) == "table", "initialValues must be a table!")
+function GroupMotor.new(initialValues, useImplicitConnections, notTopSuper, dataType)
+	local valueType = typeof(initialValues)
+	if Ser.has(valueType) then
+		return GroupMotor.new(
+			Ser.serialize(initialValues),
+			nil,
+			nil,
+			valueType
+		)
+	end
+
+	assert(valueType == "table", "initialValues must be a table or data type!")
 
 	local self = setmetatable(BaseMotor.new(), GroupMotor)
 
@@ -34,6 +60,8 @@ function GroupMotor.new(initialValues, useImplicitConnections)
 		self._useImplicitConnections = true
 	end
 
+	self._isTopSuper = not notTopSuper
+	self._dataType = dataType
 	self._complete = true
 	self._motors = {}
 
@@ -76,9 +104,21 @@ end
 function GroupMotor:setGoal(goals)
 	self._complete = false
 
+	if self._isTopSuper then -- if the goal is a direct data type
+		local isGoal = getmetatable(goals)
+		if isGoal then
+			goals = serializeGoal(isGoal, goals)
+		end
+	end
+
 	for key, goal in pairs(goals) do
 		local motor = assert(self._motors[key], ("Unknown motor for key %s"):format(key))
-		motor:setGoal(goal)
+		if motor._dataType then
+			local goalClass = getmetatable(goal)
+			motor:setGoal(serializeGoal(goalClass, goal))
+		else
+			motor:setGoal(goal)
+		end
 	end
 
 	if self._useImplicitConnections then
@@ -86,14 +126,18 @@ function GroupMotor:setGoal(goals)
 	end
 end
 
-function GroupMotor:getValue()
+function GroupMotor:getValue(noDeserializing) -- param for nested data types
 	local values = {}
 
 	for key, motor in pairs(self._motors) do
-		values[key] = motor:getValue()
+		values[key] = motor:getValue(self._dataType and true)
 	end
 
-	return values
+	if not noDeserializing and self._dataType then
+		return Ser.deserialize(values, self._dataType)
+	else
+		return values
+	end
 end
 
 function GroupMotor:__tostring()

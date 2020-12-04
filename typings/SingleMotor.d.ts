@@ -3,7 +3,7 @@ import BaseMotor from "./BaseMotor"
 import Spring from "./Spring"
 import Instant from "./Instant"
 
-declare interface SingleMotor extends BaseMotor<number> {
+declare interface SingleMotorClass extends BaseMotor<number> {
 
 	/**
 	 * TODO
@@ -13,7 +13,7 @@ declare interface SingleMotor extends BaseMotor<number> {
 
 	/**
 	 * TODO
-	 * @param goal 
+	 * @param goal
 	 */
 	setGoal(goal: Spring | Instant): void
 }
@@ -24,8 +24,8 @@ declare interface SingleMotorConstructor {
 	 * @param initialValue Value to set the motor to initially
 	 * @param useImplicitConnections Should this motor manage RenderStepped connections automatically?
 	 */
-	new(initialValue: number, useImplicitConnections?: boolean): SingleMotor
+	new(initialValue: number, useImplicitConnections?: boolean): SingleMotorClass
 }
 
 declare const SingleMotor: SingleMotorConstructor
-export = SingleMotor
+export { SingleMotor, SingleMotorClass }

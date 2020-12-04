@@ -24,13 +24,10 @@ frame.Size = UDim2.new(0, 40, 0, 40)
 frame.AnchorPoint = Vector2.new(0.5, 0.5)
 frame.Parent = screenGui
 
-local motor = Flipper.GroupMotor.new({
-	X = 0,
-	Y = 0
-})
+local motor = Flipper.GroupMotor.new(UDim2.new())
 
-motor:onStep(function(values)
-	frame.Position = UDim2.new(0, values.X, 0, values.Y)
+motor:onStep(function(position)
+	frame.Position = position
 end)
 
 motor:onComplete(function()
@@ -39,9 +36,10 @@ end)
 
 UserInputService.InputChanged:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseMovement then
-		motor:setGoal({
-			X = Flipper.Spring.new(input.Position.X, testSpringProps),
-			Y = Flipper.Spring.new(input.Position.Y, testSpringProps)
-		})
+		local pos = input.Position
+		motor:setGoal(Flipper.Spring.new(
+			UDim2.fromOffset(pos.X, pos.Y),
+			testSpringProps
+		))
 	end
 end)

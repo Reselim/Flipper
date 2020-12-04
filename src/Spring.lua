@@ -13,7 +13,8 @@ function Spring.new(targetValue, options)
 	return setmetatable({
 		_targetValue = targetValue,
 		_frequency = options.frequency or 4,
-		_dampingRatio = options.dampingRatio or 1
+		_dampingRatio = options.dampingRatio or 1,
+		_options = options
 	}, Spring)
 end
 
@@ -97,7 +98,7 @@ function Spring:step(state, dt)
 	end
 
 	local complete = math.abs(v1) < VELOCITY_THRESHOLD and math.abs(p1 - g) < POSITION_THRESHOLD
-	
+
 	return {
 		complete = complete,
 		value = complete and g or p1,

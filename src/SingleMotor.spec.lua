@@ -14,7 +14,7 @@ return function()
 
 	it("should invoke onComplete listeners when the goal is completed", function()
 		local motor = SingleMotor.new(0, false)
-		
+
 		local didComplete = false
 		motor:onComplete(function()
 			didComplete = true
