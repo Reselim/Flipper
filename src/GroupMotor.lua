@@ -26,7 +26,7 @@ local function toMotor(value)
 	if valueType == "number" then
 		return SingleMotor.new(value, false)
 	elseif valueType == "table" then
-		return GroupMotor.new(value, false, false)
+		return GroupMotor.new(value, false, true)
 	elseif Ser.has(valueType) then
 		return GroupMotor.new(
 			Ser.serialize(value),
