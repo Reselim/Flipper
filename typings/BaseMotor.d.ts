@@ -6,7 +6,13 @@ declare interface BaseMotor<T> {
 	 * @param handler
 	 */
 	onStep(handler: (value: T) => void): Connection
-	
+
+	/**
+	 * Connects a function to be called whenever the motor's goal is set
+	 * @param handler
+	 */
+	onStart(handler: () => void): Connection
+
 	/**
 	 * Connects a function to be called whenever the motor completes
 	 * @param handler
@@ -15,7 +21,7 @@ declare interface BaseMotor<T> {
 
 	/**
 	 * Hooks up a connection to RunService.RenderStepped
-	 * 
+	 *
 	 * You shouldn't need to use this.
 	 */
 	start(): void
