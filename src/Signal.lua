@@ -5,7 +5,7 @@ function Connection.new(signal, handler)
 	return setmetatable({
 		signal = signal,
 		connected = true,
-		_handler = handler
+		_handler = handler,
 	}, Connection)
 end
 
@@ -28,7 +28,7 @@ Signal.__index = Signal
 function Signal.new()
 	return setmetatable({
 		_connections = {},
-		_threads = {}
+		_threads = {},
 	}, Signal)
 end
 

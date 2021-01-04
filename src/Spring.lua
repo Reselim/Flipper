@@ -13,7 +13,7 @@ function Spring.new(targetValue, options)
 	return setmetatable({
 		_targetValue = targetValue,
 		_frequency = options.frequency or 4,
-		_dampingRatio = options.dampingRatio or 1
+		_dampingRatio = options.dampingRatio or 1,
 	}, Spring)
 end
 
@@ -101,7 +101,7 @@ function Spring:step(state, dt)
 	return {
 		complete = complete,
 		value = complete and g or p1,
-		velocity = v1
+		velocity = v1,
 	}
 end
 

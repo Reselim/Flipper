@@ -9,7 +9,7 @@ local playerGui = localPlayer:FindFirstChildOfClass("PlayerGui")
 
 local testSpringProps = {
 	frequency = 3.5,
-	dampingRatio = 0.5
+	dampingRatio = 0.5,
 }
 
 local screenGui = Instance.new("ScreenGui")
@@ -26,7 +26,7 @@ frame.Parent = screenGui
 
 local motor = Flipper.GroupMotor.new({
 	X = 0,
-	Y = 0
+	Y = 0,
 })
 
 motor:onStep(function(values)
@@ -41,7 +41,7 @@ UserInputService.InputChanged:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseMovement then
 		motor:setGoal({
 			X = Flipper.Spring.new(input.Position.X, testSpringProps),
-			Y = Flipper.Spring.new(input.Position.Y, testSpringProps)
+			Y = Flipper.Spring.new(input.Position.Y, testSpringProps),
 		})
 	end
 end)

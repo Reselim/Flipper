@@ -7,7 +7,7 @@ return function()
 	it("should complete when all child motors are complete", function()
 		local motor = GroupMotor.new({
 			A = 1,
-			B = 2
+			B = 2,
 		}, false)
 
 		expect(motor._complete).to.equal(true)
@@ -32,7 +32,7 @@ return function()
 
 	it("should start when the goal is set", function()
 		local motor = GroupMotor.new({
-			A = 0
+			A = 0,
 		}, false)
 
 		local bool = false
@@ -56,7 +56,7 @@ return function()
 	it("should properly return all values", function()
 		local motor = GroupMotor.new({
 			A = 1,
-			B = 2
+			B = 2,
 		}, false)
 
 		local value = motor:getValue()

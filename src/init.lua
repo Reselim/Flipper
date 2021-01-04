@@ -6,7 +6,7 @@ local Flipper = {
 	Linear = require(script.Linear),
 	Spring = require(script.Spring),
 	
-	isMotor = require(script.isMotor)
+	isMotor = require(script.isMotor),
 }
 
 return Flipper

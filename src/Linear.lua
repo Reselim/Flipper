@@ -8,7 +8,7 @@ function Linear.new(targetValue, options)
 
 	return setmetatable({
 		_targetValue = targetValue,
-		_velocity = options.velocity or 1
+		_velocity = options.velocity or 1,
 	}, Linear)
 end
 
@@ -29,7 +29,7 @@ function Linear:step(state, dt)
 	return {
 		complete = complete,
 		value = position,
-		velocity = velocity
+		velocity = velocity,
 	}
 end
 

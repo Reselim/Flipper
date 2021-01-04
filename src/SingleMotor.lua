@@ -18,7 +18,7 @@ function SingleMotor.new(initialValue, useImplicitConnections)
 	self._goal = nil
 	self._state = {
 		complete = true,
-		value = initialValue
+		value = initialValue,
 	}
 
 	return self

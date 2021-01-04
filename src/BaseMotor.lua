@@ -11,7 +11,7 @@ function BaseMotor.new()
 	return setmetatable({
 		_onStep = Signal.new(),
 		_onStart = Signal.new(),
-		_onComplete = Signal.new()
+		_onComplete = Signal.new(),
 	}, BaseMotor)
 end
 
