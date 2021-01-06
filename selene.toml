@@ -1,4 +1,1 @@
 std = "roblox+testez"
-
-[config]
-unused_variable = { allow_unused_self = true }
