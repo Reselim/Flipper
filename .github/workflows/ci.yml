@@ -1,0 +1,21 @@
+name: CI
+on: push
+
+jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install Foreman
+        uses: Roblox/setup-foreman@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Run Foreman
+        run: foreman install
+      
+      - name: Run Selene
+        run: selene client common server
