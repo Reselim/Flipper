@@ -5,21 +5,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      -
-        name: Setup foreman
+        
+      - name: Setup foreman
         uses: Roblox/setup-foreman@v1
         with:
           token: ${{ secrets.GH_TOKEN }}
-      -
-        name: Build
+
+      - name: Build
         run: |
           mkdir -p ~/build
           rojo build -o ~/build/Flipper.rbxmx
-      -
-        name: Upload build
+
+      - name: Upload build
         uses: actions/upload-artifact@v2
         with:
           name: build
