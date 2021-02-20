@@ -28,7 +28,7 @@ return function()
 
 		motor:start()
 		
-		local expectedDeltaTime = RunService.RenderStepped:Wait()
+		local expectedDeltaTime = RunService.PreRender:Wait()
 
 		-- Give it another frame, because connections tend to be invoked later than :Wait() calls
 		RunService.RenderStepped:Wait()
