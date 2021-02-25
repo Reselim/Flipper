@@ -18,4 +18,6 @@ jobs:
         run: foreman install
       
       - name: Run Selene
-        run: selene src
+        run: |
+          selene generate-roblox-std
+          selene src
