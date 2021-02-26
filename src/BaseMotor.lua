@@ -29,7 +29,7 @@ end
 
 function BaseMotor:start()
 	if not self._connection then
-		self._connection = RunService.PreRender:Connect(function(deltaTime)
+		self._connection = RunService.RenderStepped:Connect(function(deltaTime)
 			self:step(deltaTime)
 		end)
 	end
