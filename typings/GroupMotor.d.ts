@@ -7,7 +7,7 @@ import Spring from "./Spring"
 type GroupMotorGoals<T> = T extends Array<number> ? 
 	Array<Spring | Instant>
 	: T extends {[name: string]: number} ?
-	{[P in keyof T]: Spring | Instant}
+	{[P in keyof T]?: Spring | Instant}
 	: never
 
 declare interface GroupMotor<T> extends BaseMotor<T> {
