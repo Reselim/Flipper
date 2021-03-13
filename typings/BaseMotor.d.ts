@@ -8,12 +8,6 @@ declare interface BaseMotor<T> {
 	onStep(handler: (value: T) => void): Connection
 
 	/**
-	 * Connects a function to be called whenever the motor's goal is set
-	 * @param handler
-	 */
-	onStart(handler: () => void): Connection
-
-	/**
 	 * Connects a function to be called whenever the motor completes
 	 * @param handler
 	 */
