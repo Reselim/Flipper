@@ -105,4 +105,8 @@ function Spring:step(state, dt)
 	}
 end
 
+function Spring:__tostring()
+	return "Spring"
+end
+
 return Spring
