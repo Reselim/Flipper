@@ -24,6 +24,7 @@ end
 
 function GroupMotor.new(initialValues, useImplicitConnections)
 	assert(initialValues, "Missing argument #1: initialValues")
+	assert(tostring(initialValues) ~= "Spring", "initialValues cannot be a Spring")
 	assert(typeof(initialValues) == "table", "initialValues must be a table!")
 
 	local self = setmetatable(BaseMotor.new(), GroupMotor)
