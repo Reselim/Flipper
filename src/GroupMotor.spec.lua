@@ -64,4 +64,12 @@ return function()
 		expect(value.A).to.equal(1)
 		expect(value.B).to.equal(2)
 	end)
+
+	it("should fail when passed a Spring as an initialValue", function()
+		expect(function()
+			GroupMotor.new({
+				InvalidInitialValue = Spring.new(5)
+			})
+		end).to.throw()
+	end)
 end

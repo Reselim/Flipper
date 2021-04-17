@@ -5,6 +5,7 @@ SingleMotor.__index = SingleMotor
 
 function SingleMotor.new(initialValue, useImplicitConnections)
 	assert(initialValue, "Missing argument #1: initialValue")
+	assert(tostring(initialValue) ~= "Spring", "initialValue cannot be a Spring")
 	assert(typeof(initialValue) == "number", "initialValue must be a number!")
 
 	local self = setmetatable(BaseMotor.new(), SingleMotor)
