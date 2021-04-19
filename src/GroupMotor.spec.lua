@@ -64,4 +64,20 @@ return function()
 		expect(value.A).to.equal(1)
 		expect(value.B).to.equal(2)
 	end)
+
+	it("should error when a goal is given to GroupMotor.new", function()
+		local success = pcall(function()
+			GroupMotor.new(Instant.new(0))
+		end)
+
+		expect(success).to.equal(false)
+	end)
+
+	it("should error when a single goal is provided to GroupMotor:step", function()
+		local success = pcall(function()
+			GroupMotor.new({ a = 1 }):setGoal(Instant.new(0))
+		end)
+
+		expect(success).to.equal(false)
+	end)
 end
