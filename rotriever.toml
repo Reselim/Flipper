@@ -1,0 +1,6 @@
+[package]
+name = "Reselim/Flipper"
+author = "Reselim"
+content_root = "src"
+version = "2.0.0"
+license = "MIT"
