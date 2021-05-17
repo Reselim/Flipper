@@ -54,4 +54,14 @@ return function()
 			expect(motor._state.value).to.equal(0)
 		end)
 	end)
+
+	describe("type mismatch", function()
+		local motor = SingleMotor.new(0)
+		
+		local goal = Linear.new(Vector2.new(), {velocity = 1})
+		
+		it("should throw type mismatch error", function()
+			expect(motor:setGoal(goal)).to.throw()
+		end)
+	end)
 end

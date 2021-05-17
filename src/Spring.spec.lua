@@ -32,4 +32,14 @@ return function()
 
 		expect(motor._state.velocity < 0).to.equal(true)
 	end)
+
+	describe("type mismatch", function()
+		local motor = SingleMotor.new(0)
+		
+		local goal = Spring.new(Vector2.new())
+		
+		it("should throw type mismatch error", function()
+			expect(motor:setGoal(goal)).to.throw()
+		end)
+	end)
 end
