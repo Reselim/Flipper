@@ -1,12 +1,11 @@
 local BaseMotor = require(script.Parent.BaseMotor)
 
+local Types = require(script.Parent.Types)
+
 local SingleMotor = setmetatable({}, BaseMotor)
 SingleMotor.__index = SingleMotor
 
-function SingleMotor.new(initialValue, useImplicitConnections)
-	assert(initialValue, "Missing argument #1: initialValue")
-	assert(typeof(initialValue) == "number", "initialValue must be a number!")
-
+function SingleMotor.new(initialValue: Types.MotorValue, useImplicitConnections: boolean?)
 	local self = setmetatable(BaseMotor.new(), SingleMotor)
 
 	if useImplicitConnections ~= nil then

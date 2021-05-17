@@ -2,6 +2,7 @@ local BaseMotor = require(script.Parent.BaseMotor)
 local SingleMotor = require(script.Parent.SingleMotor)
 
 local isMotor = require(script.Parent.isMotor)
+local Types = require(script.Parent.Types)
 
 local GroupMotor = setmetatable({}, BaseMotor)
 GroupMotor.__index = GroupMotor
@@ -13,7 +14,7 @@ local function toMotor(value)
 
 	local valueType = typeof(value)
 
-	if valueType == "number" then
+	if valueType == "number" or valueType == "Vector2" or valueType == "Vector3" then
 		return SingleMotor.new(value, false)
 	elseif valueType == "table" then
 		return GroupMotor.new(value, false)
@@ -22,9 +23,7 @@ local function toMotor(value)
 	error(("Unable to convert %q to motor; type %s is unsupported"):format(value, valueType), 2)
 end
 
-function GroupMotor.new(initialValues, useImplicitConnections)
-	assert(initialValues, "Missing argument #1: initialValues")
-	assert(typeof(initialValues) == "table", "initialValues must be a table!")
+function GroupMotor.new(initialValues: Types.GroupMotorValue, useImplicitConnections: boolean?)
 	assert(not initialValues.step, "initialValues contains disallowed property \"step\". Did you mean to put a table of values here?")
 
 	local self = setmetatable(BaseMotor.new(), GroupMotor)

@@ -1,9 +1,10 @@
+local Types = require(script.Parent.Types)
+local TYPE_MISMATCH_ERROR = "Type mistmatch between initialValue (%s) and targetValue(%s)"
+
 local Linear = {}
 Linear.__index = Linear
 
-function Linear.new(targetValue, options)
-	assert(targetValue, "Missing argument #1: targetValue")
-	
+function Linear.new(targetValue: Types.MotorValue, options: Types.LinearOptions?)
 	options = options or {}
 
 	return setmetatable({
@@ -17,10 +18,22 @@ function Linear:step(state, dt)
 	local velocity = self._velocity -- Linear motion ignores the state's velocity
 	local goal = self._targetValue
 
-	local dPos = dt * velocity
+	local positionType = typeof(position)
+	local goalType = typeof(goal)
+	assert(positionType == goalType, TYPE_MISMATCH_ERROR:format(positionType, goalType))
 
-	local complete = dPos >= math.abs(goal - position)
-	position = position + dPos * (goal > position and 1 or -1)
+	local dPos, complete
+	if positionType == "number" then
+		dPos = dt * velocity
+		complete = dPos >= math.abs(goal - position)
+		position = position + dPos * (goal > position and 1 or -1)
+	else
+		local posToGoal = goal - position
+		dPos = posToGoal.Unit * dt * velocity
+		complete = dPos.Magnitude >= posToGoal.Magnitude
+		position = position + dPos
+	end
+
 	if complete then
 		position = self._targetValue
 		velocity = 0

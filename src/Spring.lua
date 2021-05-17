@@ -3,11 +3,13 @@ local POSITION_THRESHOLD = 0.001
 
 local EPS = 0.0001
 
+local Types = require(script.Parent.Types)
+local TYPE_MISMATCH_ERROR = "Type mistmatch between initialValue (%s) and targetValue(%s)"
+
 local Spring = {}
 Spring.__index = Spring
 
-function Spring.new(targetValue, options)
-	assert(targetValue, "Missing argument #1: targetValue")
+function Spring.new(targetValue: Types.MotorValue, options: Types.SpringOptions?)
 	options = options or {}
 
 	return setmetatable({
@@ -26,7 +28,11 @@ function Spring:step(state, dt)
 	local f = self._frequency*2*math.pi
 	local g = self._targetValue
 	local p0 = state.value
-	local v0 = state.velocity or 0
+	local v0 = state.velocity or p0 * 0 -- Match the original vector type
+
+	local p0Type = typeof(p0)
+	local gType = typeof(g)
+	assert(p0Type == gType, TYPE_MISMATCH_ERROR:format(p0Type, gType))
 
 	local offset = p0 - g
 	local decay = math.exp(-d*f*dt)
@@ -96,7 +102,12 @@ function Spring:step(state, dt)
 		v1 = e1*r1 + e2*r2
 	end
 
-	local complete = math.abs(v1) < VELOCITY_THRESHOLD and math.abs(p1 - g) < POSITION_THRESHOLD
+	local complete
+	if p0Type == "number" then
+		complete = math.abs(v1) < VELOCITY_THRESHOLD and math.abs(p1 - g) < POSITION_THRESHOLD
+	else
+		complete = v1.Magnitude < VELOCITY_THRESHOLD and (p1 - g).Magnitude < POSITION_THRESHOLD
+	end
 	
 	return {
 		complete = complete,
