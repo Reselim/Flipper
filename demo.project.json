@@ -1,0 +1,22 @@
+{
+	"name": "Flipper demo",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"Flipper": {
+				"$path": "src"
+			},
+			"Roact": {
+				"$path": "demo/roact"
+			}
+		},
+		"StarterPlayer": {
+			"$className": "StarterPlayer",
+			"StarterPlayerScripts": {
+				"$className": "StarterPlayerScripts",
+				"$path": "demo/client"
+			}
+		}
+	}
+}
