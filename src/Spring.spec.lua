@@ -34,7 +34,7 @@ return function()
 	end)
 
 	describe("type mismatch", function()
-		local motor = SingleMotor.new(0)
+		local motor = SingleMotor.new(0, false)
 		
 		local goal = Spring.new(Vector2.new())
 		
