@@ -6,6 +6,14 @@ local SingleMotor = setmetatable({}, BaseMotor)
 SingleMotor.__index = SingleMotor
 
 function SingleMotor.new(initialValue: Types.MotorValue, useImplicitConnections: boolean?)
+	assert(initialValue, "Missing argument #1: initialValue")
+	local initialValueType = typeof(initialValue)
+	assert(initialValueType == "number"
+		or initialValueType == "Vector2"
+		or initialValueType == "Vector3",
+		"initialValue must be a number, Vector2, or Vector3!"
+	)
+
 	local self = setmetatable(BaseMotor.new(), SingleMotor)
 
 	if useImplicitConnections ~= nil then

@@ -10,6 +10,7 @@ local Spring = {}
 Spring.__index = Spring
 
 function Spring.new(targetValue: Types.MotorValue, options: Types.SpringOptions?)
+	assert(targetValue, "Missing argument #1: targetValue")
 	options = options or {}
 
 	return setmetatable({
