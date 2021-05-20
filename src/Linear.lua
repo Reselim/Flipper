@@ -6,6 +6,7 @@ Linear.__index = Linear
 
 function Linear.new(targetValue: Types.MotorValue, options: Types.LinearOptions?)
 	assert(targetValue, "Missing argument #1: targetValue")
+	
 	options = options or {}
 
 	return setmetatable({
