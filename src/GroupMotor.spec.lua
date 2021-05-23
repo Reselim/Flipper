@@ -30,6 +30,29 @@ return function()
 		expect(motor._complete).to.equal(true)
 	end)
 
+	it("should complete when all child motors are complete (single goal)", function()
+		local motor = GroupMotor.new({
+			A = 1,
+			B = 2,
+		}, false)
+
+		expect(motor._complete).to.equal(true)
+
+		motor:setGoal(Spring.new, 4, { frequency = 7.5, dampingRatio = 1 })
+
+		expect(motor._complete).to.equal(false)
+
+		motor:step(1/60)
+
+		expect(motor._complete).to.equal(false)
+
+		for _ = 1, 0.5 * 60 do
+			motor:step(1/60)
+		end
+
+		expect(motor._complete).to.equal(true)
+	end)
+
 	it("should start when the goal is set", function()
 		local motor = GroupMotor.new({
 			A = 0,
