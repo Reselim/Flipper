@@ -74,15 +74,30 @@ function GroupMotor:step(deltaTime)
 	return allMotorsComplete
 end
 
-function GroupMotor:setGoal(goals)
-	assert(not goals.step, "goals contains disallowed property \"step\". Did you mean to put a table of goals here?")
-
+--[[
+	Table of goals example:
+		motor:setGoal({
+			A = Instant.new(3),
+			B = Spring.new(4, { frequency = 7.5, dampingRatio = 1 })
+		})
+	Single goal example:
+		motor:setGoal(Flipper.Spring.new, 0, { frequency = 2, dampingRatio = 1, })
+]]
+function GroupMotor:setGoal(goals: table | func, target: number?, options: table?)
 	self._complete = false
 	self._onStart:fire()
 
-	for key, goal in pairs(goals) do
-		local motor = assert(self._motors[key], ("Unknown motor for key %s"):format(key))
-		motor:setGoal(goal)
+	if typeof(goals) == "table" then
+		-- Given a table of goals
+		for key, goal in pairs(goals) do
+			local motor = assert(self._motors[key], ("Unknown motor for key %s"):format(key))
+			motor:setGoal(goal)
+		end
+	elseif typeof(target) == "number" and typeof(options) == "table" then
+		-- Given a single goal
+		for _, motor in pairs(self._motors) do
+			motor:setGoal(goals(target, options))
+		end
 	end
 
 	if self._useImplicitConnections then
