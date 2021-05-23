@@ -84,6 +84,8 @@ end
 		motor:setGoal(Flipper.Spring.new, 0, { frequency = 2, dampingRatio = 1, })
 ]]
 function GroupMotor:setGoal(goals: table | func, target: number?, options: table?)
+	assert(not goals.step, "goals contains disallowed property \"step\". Did you mean to put a table of goals here?")
+
 	self._complete = false
 	self._onStart:fire()
 
