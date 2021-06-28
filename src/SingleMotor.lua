@@ -50,6 +50,9 @@ function SingleMotor:getValue()
 end
 
 function SingleMotor:setGoal(goal)
+	assert(goal.frequency ~= nil, "incorrectly formatted goal table, must have frequency key")
+	assert(goal.dampingRatio ~= nil, "incorrectly formatted goal table, must have frequency key")
+	
 	self._state.complete = false
 	self._goal = goal
 
