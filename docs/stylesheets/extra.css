@@ -8,4 +8,24 @@
 
     --md-typeset-color: hsl(0, 0%, 96%);
 	--md-typeset-a-color: hsl(290, 100%, 40%);
+
+    --md-accent-fg-color: var(--md-typeset-a-color);
+    --md-accent-fg-color-transparent: var(--md-accent-fg-color);
+
+    --md-code-hl-color: hsla(202, 100%, 60%, 0.6);
+    --md-code-hl-number-color: rgb(250, 125, 100);
+    --md-code-hl-special-color: hsl(170, 94%, 58%);
+    --md-code-hl-function-color: hsl(170, 94%, 58%);
+    --md-code-hl-constant-color: hsl(170, 94%, 58%);
+    --md-code-hl-keyword-color: hsl(49, 99%, 65%);
+    --md-code-hl-string-color: hsl(25, 100%, 61%);
+    --md-code-hl-name-color: hsl(317, 100%, 75%);
+    --md-code-hl-operator-color: var(--md-code-hl-keyword-color);
+    --md-code-hl-punctuation-color: hsl(60, 18%, 67%);
+    --md-code-hl-comment-color: hsl(233, 30%, 63%);
+    --md-code-hl-generic-color: rgb(132, 139, 189);
+    --md-code-hl-variable-color: hsl(317, 100%, 75%);
+
+    --md-code-bg-color: hsl(250, 20%, 17%);
+    --md-code-fg-color: hsl(317, 100%, 75%);
 }

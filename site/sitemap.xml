@@ -5,4 +5,19 @@
          <lastmod>2021-08-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/installation/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/api/reference/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/guide/example/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>

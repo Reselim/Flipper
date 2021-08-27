@@ -1,12 +1,34 @@
 site_name: Flipper Docs
 site_url: http://shanebutt.github.io/Flipper/
+repo_url: https://github.com/Reselim/Flipper/
+repo_name: Reselim/Flipper  
 
+# add extra css files here
 extra_css:
   - stylesheets/extra.css
   - stylesheets/admonitions/construction.css
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 theme:
   name: material
+  font:
+    text: Poppins
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+
+# navigation links here like so
+nav:
+  - 'Home': 'index.md'
+  - 'Installation': 'installation.md'
+  - 'Guide':
+    - 'Example Usage': 'guide/example.md'
+  - 'API':
+    - 'Reference': 'api/reference.md'
