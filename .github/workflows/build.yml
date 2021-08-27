@@ -11,7 +11,7 @@ jobs:
       - name: Setup foreman
         uses: Roblox/setup-foreman@v1
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: |
