@@ -1,0 +1,24 @@
+:root {
+    --md-admonition-icon--construction: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4M8 9a4 4 0 0 0 4 4 4 4 0 0 0 4-4m-4.5-7c-.3 0-.5.21-.5.5v3h-1V3s-2.25.86-2.25 3.75c0 0-.75.14-.75 1.25h10c-.05-1.11-.75-1.25-.75-1.25C16.25 3.86 14 3 14 3v2.5h-1v-3c0-.29-.19-.5-.5-.5h-1z"/></svg>')
+  }
+  .md-typeset .admonition.construction,
+  .md-typeset details.construction {
+    border-color: hsl(35, 100%, 50%);
+    background-color: hsl(0, 0%, 12%);
+    border-radius: 0.4rem;
+    border-bottom-right-radius: 0rem;
+    border-top-right-radius: 0rem;
+    font-style: oblique;
+  }
+  .md-typeset .construction > .admonition-title,
+  .md-typeset .construction > summary {
+    background-color: hsl(0, 0%, 12%);
+    border-color: hsl(35, 100%, 50%);
+    font-style:normal;
+  }
+  .md-typeset .construction > .admonition-title::before,
+  .md-typeset .construction > summary::before {
+    background-color: hsl(35, 100%, 50%);
+    -webkit-mask-image: var(--md-admonition-icon--construction);
+            mask-image: var(--md-admonition-icon--construction);
+  }

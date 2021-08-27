@@ -1,0 +1,11 @@
+:root>* {
+    --md-primary-fg-color: hsl(275, 100%, 30%);
+    --md-primary-bg-color: hsl(0, 0%, 100%);
+
+    --md-default-fg-color: hsl(0, 0%, 96%);
+    --md-default-fg-color--light: hsl(0, 0%, 96%);
+    --md-default-bg-color: hsl(0, 0%, 7%);
+
+    --md-typeset-color: hsl(0, 0%, 96%);
+	--md-typeset-a-color: hsl(290, 100%, 40%);
+}

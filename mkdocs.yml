@@ -1,0 +1,12 @@
+site_name: Flipper Docs
+site_url: https://reselim.github.io/Flipper/
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/admonitions/construction.css
+
+markdown_extensions:
+  - admonition
+
+theme:
+  name: material
