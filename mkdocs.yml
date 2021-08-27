@@ -1,4 +1,4 @@
-site_name: Flipper Docs
+site_name: Flipper Documentation
 site_url: http://shanebutt.github.io/Flipper/
 repo_url: https://github.com/Reselim/Flipper/
 repo_name: Reselim/Flipper  
@@ -11,12 +11,24 @@ extra_css:
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - footnotes
+  - def_list
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 theme:
   name: material
   font:
     text: Poppins
+    code: Fira Mono
   features:
     - navigation.instant
     - navigation.tabs
@@ -28,7 +40,24 @@ theme:
 nav:
   - 'Home': 'index.md'
   - 'Installation': 'installation.md'
-  - 'Guide':
-    - 'Example Usage': 'guide/example.md'
-  - 'API':
+  - 'Introduction': 'introduction.md'
+  - 'Core Concepts':
+    - 'Motors and Goals': 'core-concepts/motors-goals.md'
+    - 'Extensibility': 'core-concepts/extensibility.md'
+  - 'Using Flipper':
+    - 'Flipper in Roact':
+      - 'Roact-Flipper': 'using-flipper/flipper-roact/roact-flipper.md'
+      - 'Roact Standard': 'using-flipper/flipper-roact/roact-standard.md'
+    - 'Flipper in Geometry': 'using-flipper/flipper-geometry.md'
+    - 'Flipper in UI': 'using-flipper/flipper-ui.md'
+  - 'API Reference':
     - 'Reference': 'api/reference.md'
+    - 'Motor-based':
+      - 'GroupMotor': 'api/motors/GroupMotor.md'
+      - 'SingleMotor': 'api/motors/SingleMotor.md'
+    - 'Goal-based':
+      - 'Instant': 'api/goals/Instant.md'
+      - 'Linear': 'api/goals/Linear.md'
+      - 'Spring': 'api/goals/Spring.md'
+    # - 'Roact- Flipper':
+    #   - 'API Page': '/api/roact-flipper/...'

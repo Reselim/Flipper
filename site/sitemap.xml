@@ -11,12 +11,67 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://shanebutt.github.io/Flipper/introduction/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://shanebutt.github.io/Flipper/api/reference/</loc>
          <lastmod>2021-08-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://shanebutt.github.io/Flipper/guide/example/</loc>
+         <loc>http://shanebutt.github.io/Flipper/api/goals/Instant/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/api/goals/Linear/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/api/goals/Spring/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/api/motors/GroupMotor/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/api/motors/SingleMotor/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/core-concepts/extensibility/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/core-concepts/motors-goals/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/using-flipper/flipper-geometry/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/using-flipper/flipper-ui/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/using-flipper/flipper-roact/roact-flipper/</loc>
+         <lastmod>2021-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://shanebutt.github.io/Flipper/using-flipper/flipper-roact/roact-standard/</loc>
          <lastmod>2021-08-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

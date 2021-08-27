@@ -8,7 +8,7 @@
     This page is under construction.
 
 !!! note "Further reading"
-    This page is current used to showcase call-outs.
+    This page is currently used to showcase call-outs.
 
 !!! help "What's a call-out?"
     Call-outs are these boxes that you are reading.
@@ -24,6 +24,9 @@
 
 !!! example "[You can link to URLs and other pages]()"
     It's really simple to link to other pages in call-outs. Just wrap your text with `[` and `]({link})` where `{link}` is the URL or page to link to.
+
+!!! bug "Making new admonitions"
+    You can make new styled admonitions by cloning the template file in `stylesheets/admonitions` and modifying the css of the exposed properties. Icons can be retrieved from the material-mkdocs github page, under `docs/.icons/` and then grabbing the SVG code of the icon you want. Then you replace the `<svg>...` code in the new `.css` file.
 
 ---
 
