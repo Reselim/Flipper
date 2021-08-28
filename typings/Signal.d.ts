@@ -22,7 +22,7 @@ export class Connection {
 	disconnect(): void
 }
 
-export declare class Signal<T = Callback> {
+export declare class Signal<T extends Callback = Callback> {
 	/**
 	 * Creates a new Signal
 	 */
@@ -32,16 +32,16 @@ export declare class Signal<T = Callback> {
 	 * Calls all handlers connected to the signal
 	 * @param args Arguments to call the handlers with
 	 */
-	fire(...args: FunctionArguments<T>): void
+	fire(...args: Parameters<T>): void
 
 	/**
 	 * Connects a handler function so that whenever .fire() is called, the function is invoked
 	 * @param handler Function to call whenever the signal is fired
 	 */
-	connect(handler: (...args: FunctionArguments<T>) => void): Connection
+	connect(handler: (...args: Parameters<T>) => void): Connection
 
 	/**
 	 * Pauses the current thread until the signal is fired
 	 */
-	wait(): FunctionArguments<T>
+	wait(): Parameters<T>
 }
