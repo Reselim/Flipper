@@ -1,5 +1,5 @@
 :root>* {
-    --md-primary-fg-color: hsl(275, 100%, 30%);
+    --md-primary-fg-color: hsl(240, 100%, 71%);
     --md-primary-bg-color: hsl(0, 0%, 100%);
 
     --md-default-fg-color: hsl(0, 0%, 96%);
@@ -7,7 +7,7 @@
     --md-default-bg-color: hsl(0, 0%, 7%);
 
     --md-typeset-color: hsl(0, 0%, 96%);
-	--md-typeset-a-color: hsl(290, 100%, 40%);
+	--md-typeset-a-color: hsl(219, 100%, 53%);
 
     --md-accent-fg-color: var(--md-typeset-a-color);
     --md-accent-fg-color-transparent: var(--md-accent-fg-color);

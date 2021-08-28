@@ -3,7 +3,7 @@
   }
   .md-typeset .admonition.construction,
   .md-typeset details.construction {
-    border-color: hsl(35, 100%, 50%);
+    border-color: hsl(240, 100%, 71%);
     background-color: hsl(0, 0%, 12%);
     border-radius: 0.4rem;
     border-bottom-right-radius: 0rem;
@@ -13,12 +13,12 @@
   .md-typeset .construction > .admonition-title,
   .md-typeset .construction > summary {
     background-color: hsl(0, 0%, 12%);
-    border-color: hsl(35, 100%, 50%);
+    border-color: hsl(240, 100%, 71%);
     font-style:normal;
   }
   .md-typeset .construction > .admonition-title::before,
   .md-typeset .construction > summary::before {
-    background-color: hsl(35, 100%, 50%);
+    background-color: hsl(240, 100%, 71%);
     -webkit-mask-image: var(--md-admonition-icon--construction);
             mask-image: var(--md-admonition-icon--construction);
   }
