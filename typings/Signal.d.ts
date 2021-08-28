@@ -22,7 +22,7 @@ export class Connection {
 	disconnect(): void
 }
 
-export declare class Signal<T extends Callback = Callback> {
+export class Signal<T extends Callback = Callback> {
 	/**
 	 * Creates a new Signal
 	 */
