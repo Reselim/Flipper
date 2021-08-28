@@ -4,7 +4,7 @@ export class Connection {
 	 * @param signal Signal that this connection originates from
 	 * @param handler Function to be called whenever signal is activated
 	 */
-	constructor(signal: Signal, handler: () => void)
+	constructor(signal: Signal, handler: Callback)
 
 	/**
 	 * Signal that this connection originates from
@@ -22,7 +22,7 @@ export class Connection {
 	disconnect(): void
 }
 
-export class Signal {
+export declare class Signal<T = Callback> {
 	/**
 	 * Creates a new Signal
 	 */
@@ -32,11 +32,16 @@ export class Signal {
 	 * Calls all handlers connected to the signal
 	 * @param args Arguments to call the handlers with
 	 */
-	fire(...args: Array<unknown>): void
+	fire(...args: FunctionArguments<T>): void
 
 	/**
 	 * Connects a handler function so that whenever .fire() is called, the function is invoked
 	 * @param handler Function to call whenever the signal is fired
 	 */
-	connect(handler: () => void): Connection
+	connect(handler: (...args: FunctionArguments<T>) => void): Connection
+
+	/**
+	 * Pauses the current thread until the signal is fired
+	 */
+	wait(): FunctionArguments<T>
 }
