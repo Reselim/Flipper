@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/flipper",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "An animation library for Roblox",
 	"main": "src/init.lua",
 	"types": "typings/index.d.ts",
