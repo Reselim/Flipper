@@ -1,17 +1,17 @@
 .md-header, .md-tabs {
-	background: linear-gradient(90deg, #517dff, #1e9bff);
+	background: linear-gradient(90deg, #517dff, #1e9bff) !important;
 }
 
 .md-logo {
-	padding: 0.5rem;
-	margin: 0;
+	padding: 0.5rem !important;
+	margin: 0 !important;
 }
 
 .md-logo img {
-	width: unset;
-	transform: translateY(0.1rem);
+	width: unset !important;
+	transform: translateY(0.1rem) !important;
 }
 
 .md-header__title {
-	visibility: hidden;
+	visibility: hidden !important;
 }
