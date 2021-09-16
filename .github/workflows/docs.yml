@@ -16,4 +16,4 @@ jobs:
       - name: Deploy
         uses: mhausenblas/mkdocs-deploy-gh-pages@1.16
         env:
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
