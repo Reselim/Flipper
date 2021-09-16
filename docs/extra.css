@@ -2,12 +2,12 @@
 	background: linear-gradient(90deg, #517dff, #1e9bff);
 }
 
-.md-header__button.md-logo {
+.md-logo {
 	padding: 0.5rem;
 	margin: 0;
 }
 
-.md-header__button.md-logo img {
+.md-logo img {
 	width: unset;
 	transform: translateY(0.1rem);
 }
