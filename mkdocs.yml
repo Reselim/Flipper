@@ -6,8 +6,6 @@ repo_url: https://github.com/Reselim/Flipper
 theme:
   name: material
   logo: simplified-logo.svg
-  features:
-    - navigation.instant
   palette:
     primary: blue
     accent: indigo
