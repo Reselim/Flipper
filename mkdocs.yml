@@ -8,7 +8,6 @@ theme:
   logo: simplified-logo.svg
   features:
     - navigation.instant
-    - navigation.tabs
   palette:
     primary: blue
     accent: indigo
