@@ -1,0 +1,17 @@
+.md-header, .md-tabs {
+	background: linear-gradient(90deg, #517dff, #1e9bff);
+}
+
+.md-header__button.md-logo {
+	padding: 0.5rem;
+	margin: 0;
+}
+
+.md-header__button.md-logo img {
+	width: unset;
+	transform: translateY(0.1rem);
+}
+
+.md-header__title {
+	visibility: hidden;
+}
