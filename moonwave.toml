@@ -1,0 +1,21 @@
+title = "Flipper"
+gitRepoUrl = "https://github.com/Reselim/Flipper"
+gitSourceBranch = "master"
+changelog = false
+
+[home]
+enabled = true
+includeReadme = false
+
+[docusaurus]
+url = "https://reselim.github.io"
+baseUrl = "/Flipper/"
+tagline = "A motion library for Roblox"
+onBrokenLinks = "warn"
+
+[navbar]
+title = ""
+
+[navbar.logo]
+alt = "Flipper Logo"
+src = "logo.svg"

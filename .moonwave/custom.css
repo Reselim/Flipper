@@ -1,0 +1,32 @@
+:root {
+	--ifm-navbar-link-color: white;
+	--ifm-navbar-link-hover-color: #e0e0e0;
+	--ifm-navbar-search-input-background-color: #6CC7FF;
+	--ifm-color-primary: #7369ff;
+}
+
+.navbar, .navbar-sidebar__brand {
+	background: linear-gradient(90deg, #517dff, #1e9bff);
+}
+
+#search_input_react::placeholder {
+	color: black;
+}
+
+.clean-btn {
+	color: white;
+}
+
+.navbar-sidebar__close svg {
+	fill: white;
+}
+
+html[data-theme="light"] .footer, html[data-theme="light"] .footer--dark {
+	background: #f0f0f0;
+	color: black;
+}
+
+html[data-theme="dark"] .footer, html[data-theme="dark"] .footer--dark {
+	background: #1f1f1f;
+	color: white;
+}

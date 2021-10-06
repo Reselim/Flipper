@@ -3,9 +3,28 @@ local POSITION_THRESHOLD = 0.001
 
 local EPS = 0.0001
 
+--[=[
+	@interface SpringOptions
+	@within Spring
+	@field frequency number | nil -- Oscillation rate (in hz) when dampingRatio is 1. Default: 4
+	@field dampingRatio number | nil -- How rapidly the oscillations decay from one bounce to the next. Default: 1
+]=]
+
+--[=[
+	@class Spring
+
+	Represents a spring-type Goal. Based on [Fraktality's spring solver](https://github.com/Fraktality/Spring).
+]=]
 local Spring = {}
 Spring.__index = Spring
 
+--[=[
+	Creates a new Spring.
+
+	@param targetValue number
+	@param options SpringOptions
+	@return Spring
+]=]
 function Spring.new(targetValue, options)
 	assert(targetValue, "Missing argument #1: targetValue")
 	options = options or {}
@@ -17,6 +36,13 @@ function Spring.new(targetValue, options)
 	}, Spring)
 end
 
+--[=[
+	Advances the specified MotorState by `deltaTime` using the spring solver and returns a new MotorState.
+
+	@param state MotorState
+	@param deltaTime number
+	@return MotorState
+]=]
 function Spring:step(state, dt)
 	-- Copyright 2018 Parker Stebbins (parker@fractality.io)
 	-- github.com/Fraktality/Spring
