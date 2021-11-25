@@ -1,8 +1,9 @@
 [package]
 name = "reselim/flipper"
+description = "A motion library for Roblox"
+license = "MIT"
+authors = ["Reselim"]
 version = "2.0.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 include = ["default.project.json", "src"]
-
-[dependencies]
