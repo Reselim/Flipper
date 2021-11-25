@@ -3,5 +3,6 @@ name = "reselim/flipper"
 version = "2.0.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+include = ["default.project.json", "src"]
 
 [dependencies]
